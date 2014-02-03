@@ -1,1 +1,6 @@
 Mezzanine==3.0.6
+South==0.8.4
+
+# These are needed for import from rss
+dateutils
+feedparser

@@ -23,9 +23,11 @@
         {% else %}
             {% if page %}
                 {% block blog_post_list_pagecontent %}
+                    {% comment %}
                     {% editable page.richtextpage.content %}
                         {{ page.richtextpage.content|richtext_filters|safe }}
                     {% endeditable %}
+                    {% endcomment %}
                 {% endblock %}
             {% endif %}
         {% endif %}
@@ -73,7 +75,7 @@
                             <li>{% trans "Tags" %}:</li>
                             {% spaceless %}
                                 {% for tag in tags %}
-                                    <li><a href="{% url "blog_post_list_tag" tag.slug %}" class="tag">{{ tag }}</a></li>
+                                    <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
                                 {% endfor %}
                             {% endspaceless %}
                         </ul>
@@ -109,6 +111,7 @@
         {% endif %}
     </div>
     <div class="col-md-4">
+        {% include "includes/social-icons.html" %}
         <ul>
             <li>test</li>
         </ul>

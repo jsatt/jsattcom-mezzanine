@@ -250,6 +250,8 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+
+    'customizations',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -344,7 +346,7 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 # ignored in your version control system allowing for settings to be
 # defined per machine.
 try:
-    from local_settings import *
+    from local_settings import *  # noqa
 except ImportError:
     pass
 

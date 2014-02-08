@@ -89,7 +89,8 @@ header nav{
 }
 
 header nav ul{
-    margin:0
+    margin:0;
+    padding: 0;
 }
 
 header nav li{

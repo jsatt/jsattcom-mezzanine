@@ -4,10 +4,11 @@ supervisor:
     service:
         - running
         - watch:
-            - file: /etc/supervisor/conf.d/mazzanine.conf
+            - file: mezzanine
 
-/etc/supervisor/conf.d/mezzanine.conf:
+mezzanine:
     file.managed:
+        - name: /etc/supervisor/conf.d/mezzanine.conf
         - source: salt://etc/supervisor/conf.d/mezzanine.conf
         - mode: 644
         - require:

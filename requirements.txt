@@ -1,5 +1,6 @@
 Mezzanine==3.0.6
 South==0.8.4
+gunicorn==18.0
 
 # These are needed for import from rss
 dateutils

@@ -1,6 +1,7 @@
 Mezzanine==3.0.6
 South==0.8.4
 gunicorn==18.0
+psycopg2==2.5.2
 
 # These are needed for import from rss
 dateutils

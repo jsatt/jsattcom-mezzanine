@@ -13,6 +13,7 @@ nginx:
     file.managed:
         - name: /etc/nginx/sites-available/default
         - source: salt://etc/nginx/sites-available/default
+        - template: jinja
         - require:
             - pkg: nginx
 

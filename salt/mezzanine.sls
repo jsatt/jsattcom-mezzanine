@@ -20,6 +20,8 @@ mezzanine:
         - template: jinja
         - require:
             - git: mezzanine
+
+pip_requirements:
     cmd.wait:
         - name: pip install -r requirements.txt
         - cwd: /var/www/jsattcom-mezzanine/
@@ -27,6 +29,14 @@ mezzanine:
             - git: mezzanine
         - require:
             - pkg: pillow_dependencies
+
+collect_static:
+    cmd.wait:
+        - name: python manage.py collectstatic
+        - cwd: /var/www/jsattcom-mezzanine/
+        - runas: www-data
+        - watch:
+            - git: mezzanine
 
 {% for username, user in pillar.postgres.users.items() %}
 pg_user-{{username}}:

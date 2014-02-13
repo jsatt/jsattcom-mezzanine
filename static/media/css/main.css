@@ -62,7 +62,7 @@ header .title{
     margin-bottom: 10px;
 }
 
-header .title a{
+header .title a, header .title a:visited{
     text-decoration: none;
     color: #ffffff;
 }
@@ -100,7 +100,7 @@ header nav li{
     letter-spacing: 2px;
 }
 
-header nav a{
+header nav a, header nav a:visited{
     color: rgba(255, 255, 255, 0.5);
     transition: color .4s;
     text-decoration: none;

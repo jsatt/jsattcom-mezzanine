@@ -1,6 +1,8 @@
 {% overextends "blog/blog_post_detail.html" %}
 {% load mezzanine_tags comment_tags keyword_tags rating_tags i18n future disqus_tags %}
 
+{% block body_id %}page_blog_post{% endblock %}
+
 {% block main %}
 <div class="row">
     <article class="col-md-8" itemscope itemtype="http://schema.org/BlogPosting">

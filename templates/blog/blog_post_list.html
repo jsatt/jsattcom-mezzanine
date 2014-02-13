@@ -5,7 +5,7 @@
 
 {% block main %}
 <div class="row">
-    <div class="col-md-8">
+    <article class="col-md-8">
         {% if tag or category or year or month or author %}
             {% block blog_post_list_filterinfo %}
             <p>
@@ -111,10 +111,10 @@
         {% if settings.COMMENTS_DISQUS_SHORTNAME %}
         {% include "generic/includes/disqus_counts.html" %}
         {% endif %}
-    </div>
-    <div class="col-md-4">
+    </article>
+    <aside class="col-md-4">
         {% include "includes/social-icons.html" %}
         {% include "includes/keyword_sidebar.html" %}
-    </div>
+    </aside>
 </div>
 {% endblock %}

@@ -170,15 +170,39 @@ footer a:hover,footer a:active{
 }
 
 #related-posts {
-    border-top: 1px solid #999999;
+    border-top: 1px solid #cccccc;
     margin: 20px 0;
 }
 #related-posts .related-post {
-    border-bottom: 1px solid #999999;
+    border-bottom: 1px solid #cccccc;
     padding: 10px 0;
 }
 
-.related-post > a {
+#related-posts .related-post > a {
     font-size: 18px;
     font-weight: 300;
+}
+
+aside .keywords .keyword{
+    border-bottom: 1px solid #cccccc;
+    padding: 3px 0;
+}
+
+
+/* syntax highlighting */
+.linenums li.L0,
+.linenums li.L1,
+.linenums li.L2,
+.linenums li.L3,
+.linenums li.L4,
+.linenums li.L5,
+.linenums li.L6,
+.linenums li.L7,
+.linenums li.L8,
+.linenums li.L9 {
+  list-style-type: decimal;
+}
+
+ol.linenums li {
+    margin-left: 0 !important;
 }

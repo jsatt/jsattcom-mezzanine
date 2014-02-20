@@ -311,6 +311,7 @@ OPTIONAL_APPS = (
 )
 
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
+TINYMCE_SETUP_JS = 'js/tinymce_setup.js'
 
 ###################
 # DEPLOY SETTINGS #

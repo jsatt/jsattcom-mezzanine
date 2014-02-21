@@ -5,4 +5,5 @@
 .DS_Store
 .coverage
 local_settings.py
+!salt/*/local_settings.py
 /static

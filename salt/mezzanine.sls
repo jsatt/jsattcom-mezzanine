@@ -15,7 +15,7 @@ mezzanine:
         - target: /var/www/jsattcom-mezzanine/
     file.managed:
         - name: /var/www/jsattcom-mezzanine/local_settings.py
-        - source: salt://var/www/local_settings.py
+        - source: salt://mezzanine/local_settings.py
         - mode: 0644
         - template: jinja
         - require:

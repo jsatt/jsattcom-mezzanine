@@ -19,4 +19,10 @@ server {
     }
 }
 
+server {
+    listen 80;
+    server_name www.jsatt.com;
+    rewrite ^ http://jsatt.com$request_uri permanent;
+}
+
 # vim: set filetype=nginx:

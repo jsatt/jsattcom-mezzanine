@@ -32,7 +32,7 @@ pip_requirements:
 
 collect_static:
     cmd.wait:
-        - name: python manage.py collectstatic
+        - name: python manage.py collectstatic --noinput
         - cwd: /var/www/jsattcom-mezzanine/
         - runas: www-data
         - watch:

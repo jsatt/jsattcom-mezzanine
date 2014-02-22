@@ -1,14 +1,6 @@
 include:
     - python
 
-mezzanine_db:
-    postgres_database.present:
-        - name: {{pillar.postgres.blog_db}}
-        - owner: {{pillar.postgres.blog_owner}}
-        - runas: postgres
-        - require:
-            - postgres_user: pg_user-{{pillar.postgres.blog_owner}}
-
 mezzanine:
     git.latest:
         - name: https://github.com/jsatt/jsattcom-mezzanine.git
@@ -19,6 +11,27 @@ mezzanine:
         - mode: 0644
         - template: jinja
         - require:
+            - git: mezzanine
+    postgres_database.present:
+        - name: {{pillar.postgres.blog_db}}
+        - owner: {{pillar.postgres.blog_owner}}
+        - runas: postgres
+        - require:
+            - postgres_user: pg_user-{{pillar.postgres.blog_owner}}
+    cmd.wait:
+        - name: python manage.py syncdb --noinput
+        - cwd: /var/www/jsattcom-mezzanine/
+        - runas: www-data
+        - watch:
+            - git: mezzanine
+            - postgres_database: mezzanine
+
+db_migrations:
+    cmd.wait:
+        - name: python manage.py migrate
+        - cwd: /var/www/jsattcom-mezzanine/
+        - runas: www-data
+        - watch:
             - git: mezzanine
 
 pip_requirements:
@@ -35,6 +48,12 @@ collect_static:
         - name: python manage.py collectstatic --noinput
         - cwd: /var/www/jsattcom-mezzanine/
         - runas: www-data
+        - watch:
+            - git: mezzanine
+
+restart_gunicorn:
+    cmd.wait:
+        - name: supervisorctl restart gunicorn
         - watch:
             - git: mezzanine
 

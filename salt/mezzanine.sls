@@ -25,6 +25,8 @@ mezzanine:
         - watch:
             - git: mezzanine
             - postgres_database: mezzanine
+        - require:
+            - cmd: pip_requirements
 
 db_migrations:
     cmd.wait:
@@ -33,6 +35,9 @@ db_migrations:
         - runas: www-data
         - watch:
             - git: mezzanine
+        - require:
+            - cmd: pip_requirements
+            - cmd: mezzanine
 
 pip_requirements:
     cmd.wait:

@@ -9,7 +9,6 @@ server {
 
     location /static/ {
         expires 1M;
-        gzip_types application/x-javascript text/css;
         alias {{pillar.django.static_path}};
     }
 
@@ -32,6 +31,9 @@ server {
     server_name static.jsatt.com;
     root {{pillar.django.static_path}};
     expires 24h;
+    location ~ ^.*\.(woff|svg|eot|ttf)$ {
+        add_header 'Access-Control-Allow-Origin' '*';
+    }
 }
 
 # vim: set filetype=nginx:

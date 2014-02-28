@@ -26,11 +26,12 @@ server {
     rewrite ^ http://jsatt.com$request_uri permanent;
 }
 
+
 server {
     listen 80;
     server_name static.jsatt.com;
     root {{pillar.django.static_path}};
-    expires 24h;
+    expires 1M;
     location ~ ^.*\.(woff|svg|eot|ttf)$ {
         add_header 'Access-Control-Allow-Origin' '*';
     }

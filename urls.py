@@ -88,6 +88,9 @@ urlpatterns += patterns('',
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
 
+) + patterns(
+    '',
+    (r'^ckeditor/', include('ckeditor.urls')),
 )
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error

@@ -252,6 +252,7 @@ INSTALLED_APPS = (
     #"mezzanine.mobile",
 
     'customizations',
+    'ckeditor',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -311,7 +312,9 @@ OPTIONAL_APPS = (
 )
 
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
-TINYMCE_SETUP_JS = 'js/tinymce_setup.js'
+#TINYMCE_SETUP_JS = 'js/tinymce_setup.js'
+RICHTEXT_WIDGET_CLASS = 'ckeditor.widgets.CKEditorWidget'
+CKEDITOR_UPLOAD_PATH = MEDIA_ROOT
 
 ###################
 # DEPLOY SETTINGS #

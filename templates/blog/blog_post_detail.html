@@ -88,9 +88,9 @@
     <aside class="col-md-4">
         {% include "includes/social-icons.html" %}
         {% block blog_post_detail_related_posts %}
-        {% if blog_post.related_posts.all %}
+        {% if blog_post.related_posts.published %}
         <div id="related-posts">
-            {% for post in blog_post.related_posts.all %}
+            {% for post in blog_post.related_posts.published %}
             <div class="related-post">
                 <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                 {% blocktrans with since_post=post.publish_date|timesince %}<div class="timesince">{{since_post}}</div>{% endblocktrans%}

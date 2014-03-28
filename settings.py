@@ -313,8 +313,37 @@ OPTIONAL_APPS = (
 
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #TINYMCE_SETUP_JS = 'js/tinymce_setup.js'
-RICHTEXT_WIDGET_CLASS = 'ckeditor.widgets.CKEditorWidget'
+RICHTEXT_WIDGET_CLASS = 'customizations.widgets.CustomCKEditorWidget'
 CKEDITOR_UPLOAD_PATH = MEDIA_ROOT
+CKEDITOR_SOURCE = STATIC_URL + 'js/ckeditor/ckeditor.js'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+        'skin': 'moonocolor',
+	    'toolbarGroups': [
+            { 'name': 'styles' },
+            { 'name': 'basicstyles', 'groups': [ 'basicstyles', 'cleanup' ] },
+            { 'name': 'paragraph',   'groups': [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+            { 'name': 'insert' },
+            '/',
+            { 'name': 'clipboard',   'groups': [ 'clipboard', 'undo' ] },
+            { 'name': 'editing',     'groups': [ 'find', 'selection', 'spellchecker' ] },
+            { 'name': 'links' },
+            { 'name': 'forms' },
+            { 'name': 'tools' },
+            { 'name': 'documet',	   'groups': [ 'mode', 'document', 'doctools' ] },
+            { 'name': 'others' },
+            { 'name': 'colors' },
+            { 'name': 'about' }
+        ],
+        'extraAllowedContent': {
+            'pre': {
+                'classes': '*'
+            }
+        },
+    }
+}
 
 ###################
 # DEPLOY SETTINGS #

@@ -342,6 +342,9 @@ CKEDITOR_CONFIGS = {
                 'classes': '*'
             }
         },
+        'contentsCss': (
+            STATIC_URL + 'css/main.css',
+            STATIC_URL + 'css/syntax.css',),
     }
 }
 

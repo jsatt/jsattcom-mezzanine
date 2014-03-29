@@ -8,9 +8,10 @@ CKEDITOR.editorConfig = function( config ) {
 	// For the complete reference:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
     //
-    config.skin = 'moonocolor';
+    //config.skin = 'moonocolor';
 
 	// The toolbar groups arrangement, optimized for two toolbar rows.
+    /*
 	config.toolbarGroups = [
 		{ name: 'styles' },
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
@@ -26,13 +27,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
 		{ name: 'colors' },
 		{ name: 'about' }
-	];
-
-    config.extraAllowedContent: {
-        'pre': {
-            classes: '*'
-        }
-    };
+	];*/
 
 	// Se the most common block elements.
 	//config.format_tags = 'p;h1;h2;h3;pre';

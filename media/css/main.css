@@ -188,25 +188,32 @@ aside .keywords .keyword{
     padding: 3px 0;
 }
 
-
-/* syntax highlighting */
-.linenums li.L0,
-.linenums li.L1,
-.linenums li.L2,
-.linenums li.L3,
-.linenums li.L4,
-.linenums li.L5,
-.linenums li.L6,
-.linenums li.L7,
-.linenums li.L8,
-.linenums li.L9 {
-  list-style-type: decimal;
+/* Bootstrap overrides */
+.pagination > li > a,
+.pagination > li > span{
+    transition: background-color 0.5s, color 0.5s;
+    color: #666666;
 }
 
-ol.linenums li {
-    margin-left: 0 !important;
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover
+{
+    color: #000000;
 }
 
+.pagination > .active > a{
+    background-color: #666666;
+    border-color: #666666;
+
+}
+
+.pagination > .active > a:hover{
+    background-color: #333333;
+    border-color: #333333;
+}
+
+/* CKEditor stlye fixes */
 .cke_panel_container body, .cke_editable{
     background-color: #ffffff;
     padding:10px;

@@ -338,13 +338,14 @@ CKEDITOR_CONFIGS = {
             { 'name': 'about' }
         ],
         'extraAllowedContent': {
-            'pre': {
+            'pre code': {
                 'classes': '*'
             }
         },
         'contentsCss': (
+            STATIC_URL + 'css/bootstrap.min.css',
             STATIC_URL + 'css/main.css',
-            STATIC_URL + 'css/syntax.css',),
+        ),
     }
 }
 

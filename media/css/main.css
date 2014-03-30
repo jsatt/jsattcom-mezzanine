@@ -209,6 +209,7 @@ ol.linenums li {
 
 .cke_panel_container body, .cke_editable{
     background-color: #ffffff;
+    padding:10px;
 }
 
 .cke_source{

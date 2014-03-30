@@ -41,7 +41,7 @@ color: #999999;
 text-decoration: none;
 }
 
-a:hover, a:active{
+a:hover, a:active, a:focus{
 color: #454545;
 text-decoration: none;
 }
@@ -67,7 +67,7 @@ header .title a, header .title a:visited{
     color: #ffffff;
 }
 
-header .title a:hover, header .title a:active{
+header .title a:hover, header .title a:active, header .title a:focus{
     text-decoration: none;
     color: #eeeeee;
 }
@@ -106,7 +106,7 @@ header nav a, header nav a:visited{
     text-decoration: none;
 }
 
-header nav a:hover, header nav a:active, header nav a.active{
+header nav a:hover, header nav a:active, header nav a:focus, header nav a.active{
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
 }
@@ -134,7 +134,7 @@ footer a{
     text-decoration: none;
 }
 
-footer a:hover,footer a:active{
+footer a:hover, footer a:active, footer a:focus{
     color: #cccccc;
     text-decoration:none;
 }
@@ -164,7 +164,7 @@ footer a:hover,footer a:active{
     line-height: 22px;
 }
 
-.social-icons a:hover{
+.social-icons a:hover, .social-icons a:active, .social-icons a:focus{
     color: #000000;
     font-size: 28px;
 }
@@ -189,6 +189,21 @@ aside .keywords .keyword{
 }
 
 /* Bootstrap overrides */
+
+.nav > li > a:hover,
+.nav > li > a:active,
+.nav > li > a:focus{
+    background-color: inherit;
+}
+.nav.navbar-nav{
+    float: none;
+}
+
+.nav.navbar-nav li{
+    float: none;
+    display: inline-block;
+}
+
 .pagination > li > a,
 .pagination > li > span{
     transition: background-color 0.5s, color 0.5s;
@@ -196,6 +211,7 @@ aside .keywords .keyword{
 }
 
 .pagination > li > a:hover,
+.pagination > li > a:active,
 .pagination > li > a:focus,
 .pagination > li > span:hover
 {
@@ -208,7 +224,9 @@ aside .keywords .keyword{
 
 }
 
-.pagination > .active > a:hover{
+.pagination > .active > a:hover,
+.pagination > .active > a:active,
+.pagination > .active > a:focus{
     background-color: #333333;
     border-color: #333333;
 }

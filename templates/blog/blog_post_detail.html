@@ -6,11 +6,11 @@
 {% block main %}
 <div class="row">
     <article class="col-md-8" itemscope itemtype="http://schema.org/BlogPosting">
-        {% editable blog_post.title %}
+        {% editable blog_post.title blog_post._meta_title blog_post.description %}
         <h1 class="headline" itemprop="headline">{{ blog_post.title }}</h1>
         {% endeditable %}
         {% block blog_post_list_post_metainfo %}
-            {% editable blog_post.user blog_post.publish_date blog_post.categories blog_post.keywords %}
+            {% editable blog_post.user blog_post.publish_date blog_post.expiry_date blog_post.categories blog_post.keywords blog_post.in_sitemap %}
             <h6 class="post-meta">
                 {% trans "Posted by" %}:
                 {% with blog_post.user as author %}
@@ -55,6 +55,7 @@
         </div>
         {% block blog_post_detail_commentlink %}
         <p>
+            {% editable blog_post.allow_comments %}
             {% if blog_post.allow_comments %}
                 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
                     (<a href="{{ blog_post.get_absolute_url }}#disqus_thread"
@@ -66,6 +67,7 @@
                     {% endspaceless %}</a>)
                 {% endif %}
             {% endif %}
+            {% endeditable %}
         </p>
         {% endblock %}
         {% if settings.COMMENTS_DISQUS_SHORTNAME %}
@@ -88,6 +90,7 @@
     <aside class="col-md-4">
         {% include "includes/social-icons.html" %}
         {% block blog_post_detail_related_posts %}
+        {% editable blog_post.related_posts %}
         {% if blog_post.related_posts.published %}
         <div id="related-posts">
             {% for post in blog_post.related_posts.published %}
@@ -98,6 +101,7 @@
             {% endfor %}
         </div>
         {% endif %}
+        {% endeditable %}
         {% include "includes/keyword_sidebar.html" %}
         {% endblock %}
     </aside>

@@ -245,3 +245,11 @@ aside .keywords .keyword{
 .editable-form textarea{
     line-height: 1em;
 }
+
+/* Media queries */
+@media (max-width: 768px) {
+    pre[class*='language-'],
+    code[class*='language-'] {
+        white-space: pre-wrap;
+    }
+}

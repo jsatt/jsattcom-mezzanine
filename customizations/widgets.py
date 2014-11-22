@@ -5,7 +5,7 @@ from django.conf import settings
 class CustomCKEditorWidget(CKEditorWidget):
     class Media:
         extend = False
-        js = (
-            getattr(settings, 'CKEDITOR_SOURCE',
-                    settings.STATIC_URL + 'ckeditor/ckeditor/ckeditor.js'),
+        js =( 
+            settings.STATIC_URL + 'js/ckeditor/ckeditor.js',
+            settings.STATIC_URL + 'js/ckeditor/ckeditor-init.js',
         )

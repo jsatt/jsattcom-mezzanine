@@ -321,7 +321,7 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
         'skin': 'moonocolor',
-	    'toolbarGroups': [
+        'toolbarGroups': [
             { 'name': 'styles' },
             { 'name': 'basicstyles', 'groups': [ 'basicstyles', 'cleanup' ] },
             { 'name': 'paragraph',   'groups': [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
@@ -332,13 +332,13 @@ CKEDITOR_CONFIGS = {
             { 'name': 'links' },
             { 'name': 'forms' },
             { 'name': 'tools' },
-            { 'name': 'documet',	   'groups': [ 'mode', 'document', 'doctools' ] },
+            { 'name': 'documet',     'groups': [ 'mode', 'document', 'doctools' ] },
             { 'name': 'others' },
             { 'name': 'colors' },
             { 'name': 'about' }
         ],
         'extraAllowedContent': {
-            'pre code nav ul li': {
+            'pre code nav ul ol li abbr': {
                 'classes': '*'
             },
             'h1 h2 h3 h4 h5 h6':{

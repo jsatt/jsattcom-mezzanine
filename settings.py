@@ -210,7 +210,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = STATIC_URL + "media/"
+MEDIA_URL = "/media/"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -314,7 +314,7 @@ OPTIONAL_APPS = (
 DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #TINYMCE_SETUP_JS = 'js/tinymce_setup.js'
 RICHTEXT_WIDGET_CLASS = 'customizations.widgets.CustomCKEditorWidget'
-CKEDITOR_UPLOAD_PATH = MEDIA_ROOT
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_SOURCE = STATIC_URL + 'js/ckeditor/ckeditor.js'
 
 CKEDITOR_CONFIGS = {
@@ -344,6 +344,8 @@ CKEDITOR_CONFIGS = {
             'h1 h2 h3 h4 h5 h6':{
                 'attributes': 'id'
             },
+            'style script': {},
+            'input button checkbox select radio': {},
             '*': {
                 'attributes': '*',
             },

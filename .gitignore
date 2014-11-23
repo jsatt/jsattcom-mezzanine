@@ -7,3 +7,4 @@
 local_settings.py
 !salt/*/local_settings.py
 /static
+/media/uploads

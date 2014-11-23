@@ -21,7 +21,10 @@ urlpatterns = i18n_patterns("",
 )
 
 urlpatterns += patterns('',
+    (r'^ckeditor/', include('ckeditor.urls')),
+) + patterns(
 
+    '',
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
@@ -88,9 +91,6 @@ urlpatterns += patterns('',
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
 
-) + patterns(
-    '',
-    (r'^ckeditor/', include('ckeditor.urls')),
 )
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error

@@ -1,3 +1,5 @@
 from django.db import models
+from mezzanine.pages.models import Page
 
-# Create your models here.
+class StaticPage(Page):
+    content = models.TextField("Content")

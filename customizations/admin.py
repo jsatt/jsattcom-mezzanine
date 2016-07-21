@@ -1,3 +1,6 @@
 from django.contrib import admin
+from mezzanine.pages.admin import PageAdmin
 
-# Register your models here.
+from .models import StaticPage
+
+admin.site.register(StaticPage, PageAdmin)

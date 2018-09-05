@@ -1,10 +1,8 @@
-django==1.7.1
-Mezzanine==3.1.10
-South==1.0.1
-gunicorn==19.0.0
-psycopg2==2.5.2
-#django-ckeditor==4.4.6
--e git+https://github.com/jsatt/django-ckeditor.git#egg=django-ckeditor
+django~=1.11
+Mezzanine~=4.3
+gunicorn==19.9.0
+psycopg2-binary==2.7.5
+django-ckeditor==5.6.1
 
 # These are needed for import from rss
 dateutils

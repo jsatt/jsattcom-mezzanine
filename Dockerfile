@@ -1,9 +1,9 @@
-FROM python:2.7
+FROM python:3.6
 
 RUN mkdir /srv/app
 WORKDIR /srv/app
 
-COPY . .
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-CMD python manage.py runserver
+COPY . .

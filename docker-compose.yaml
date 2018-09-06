@@ -13,10 +13,25 @@ services:
             - '8000:8000'
         volumes:
             - '.:/srv/app'
+        environment:
+            DEBUG: 'True'
+            DATABASE_URL: psql://django:django@db:5432/blog
+        env_file: .dockerenv
+        networks:
+            blog_net:
+                ipv4_address: 172.18.0.2
     db:
         image: postgres:latest
-        ports:
-            - '5431:5432'
-    
+        environment:
+            POSTGRES_USER: django
+            POSTGRES_PASSWORD: django
+            POSTGRES_DB: blog
+        networks:
+            blog_net:
+                ipv4_address: 172.18.0.3
 
-
+networks:
+    blog_net:
+        ipam:
+            config:
+                - subnet: 172.18.0.0/16

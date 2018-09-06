@@ -1,4 +1,5 @@
 django~=1.11
+django-environ==0.4.5
 Mezzanine~=4.3
 gunicorn==19.9.0
 psycopg2-binary==2.7.5

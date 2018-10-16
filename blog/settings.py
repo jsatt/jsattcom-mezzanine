@@ -344,27 +344,28 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-##################
-# LOCAL SETTINGS #
-##################
+STATICFILES_STORAGE = env.str(
+    'STATICFILES_STORAGE',
+    default='django.contrib.staticfiles.storage.StaticFilesStorage')
+DEFAULT_FILE_STORAGE = env.str(
+    'DEFAULT_FILE_STORAGE',
+    default='django.core.files.storage.FileSystemStorage')
 
-# Allow any settings to be defined in local_settings.py which should be
-# ignored in your version control system allowing for settings to be
-# defined per machine.
 
-# Instead of doing "from .local_settings import *", we use exec so that
-# local_settings has full access to everything defined in this module.
-# Also force into sys.modules so it's visible to Django's autoreload.
-
-f = os.path.join(PROJECT_APP_PATH, "local_settings.py")
-if os.path.exists(f):
-    import sys
-    import imp
-    module_name = "%s.local_settings" % PROJECT_APP
-    module = imp.new_module(module_name)
-    module.__file__ = f
-    sys.modules[module_name] = module
-    exec(open(f, "rb").read())
+if env.bool('AWS_ACCESS_KEY_ID', default=False):
+    AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
+if env.bool('AWS_SECRET_ACCESS_KEY', default=False):
+    AWS_SECRET_ACCESS_KEY = env.str('AWS_SECRET_ACCESS_KEY')
+if env.bool('AWS_STORAGE_BUCKET_NAME', default=False):
+    AWS_STORAGE_BUCKET_NAME = env.str('AWS_STORAGE_BUCKET_NAME')
+if env.bool('AWS_QUERYSTRING_AUTH', default=False):
+    AWS_QUERYSTRING_AUTH = env.bool('AWS_QUERYSTRING_AUTH')
+if env.bool('AWS_S3_ENCRYPTION', default=False):
+    AWS_S3_ENCRYPTION = env.bool('AWS_S3_ENCRYPTION')
+if env.bool('AWS_S3_FILE_OVERWRITE', default=False):
+    AWS_S3_FILE_OVERWRITE = env.bool('AWS_S3_FILE_OVERWRITE')
+if env.bool('AWS_LOCATION', default=False):
+    AWS_LOCATION = env.str('AWS_LOCATION')
 
 
 ####################

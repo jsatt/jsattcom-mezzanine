@@ -4,18 +4,15 @@ services:
     app:
         build:
             context: .
-        command:
-            - gunicorn
-            - blog.wsgi
-            - -b
-            - 0.0.0.0:8000
         ports:
             - '8000:8000'
         volumes:
             - '.:/srv/app'
         environment:
+            GUNICORN_CMD_ARGS: -b 0.0.0.0:8000 -w 2
             DEBUG: 'True'
             DATABASE_URL: psql://django:django@db:5432/blog
+            PYTHONUNBUFFERED: 1
         env_file: .dockerenv
         networks:
             blog_net:

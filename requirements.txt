@@ -1,6 +1,7 @@
 Mezzanine~=4.3
 django-ckeditor==5.6.1
 django-environ==0.4.5
+django-storages==1.7.1
 django~=1.11
 gunicorn==19.9.0
 psycopg2-binary==2.7.5

@@ -347,25 +347,34 @@ CKEDITOR_CONFIGS = {
 STATICFILES_STORAGE = env.str(
     'STATICFILES_STORAGE',
     default='django.contrib.staticfiles.storage.StaticFilesStorage')
+STATICFILES_LOCATION = env.str('STATICFILES_LOCATION', default='')
 DEFAULT_FILE_STORAGE = env.str(
     'DEFAULT_FILE_STORAGE',
     default='django.core.files.storage.FileSystemStorage')
+MEDIA_LOCATION = env.str('MEDIA_LOCATION', default='')
 
 
-if env.bool('AWS_ACCESS_KEY_ID', default=False):
-    AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID')
-if env.bool('AWS_SECRET_ACCESS_KEY', default=False):
-    AWS_SECRET_ACCESS_KEY = env.str('AWS_SECRET_ACCESS_KEY')
-if env.bool('AWS_STORAGE_BUCKET_NAME', default=False):
-    AWS_STORAGE_BUCKET_NAME = env.str('AWS_STORAGE_BUCKET_NAME')
-if env.bool('AWS_QUERYSTRING_AUTH', default=False):
-    AWS_QUERYSTRING_AUTH = env.bool('AWS_QUERYSTRING_AUTH')
-if env.bool('AWS_S3_ENCRYPTION', default=False):
-    AWS_S3_ENCRYPTION = env.bool('AWS_S3_ENCRYPTION')
-if env.bool('AWS_S3_FILE_OVERWRITE', default=False):
-    AWS_S3_FILE_OVERWRITE = env.bool('AWS_S3_FILE_OVERWRITE')
-if env.bool('AWS_LOCATION', default=False):
-    AWS_LOCATION = env.str('AWS_LOCATION')
+aws_key = env.str('AWS_ACCESS_KEY_ID', default=None)
+if aws_key is not None:
+    AWS_ACCESS_KEY_ID = aws_key
+aws_secret = env.str('AWS_SECRET_ACCESS_KEY', default=None)
+if aws_secret is not None:
+    AWS_SECRET_ACCESS_KEY = aws_secret
+aws_bucket = env.str('AWS_STORAGE_BUCKET_NAME', default=None)
+if aws_bucket is not None:
+    AWS_STORAGE_BUCKET_NAME = aws_bucket
+aws_qs_auth = env.bool('AWS_QUERYSTRING_AUTH', default=None)
+if aws_qs_auth is not None:
+    AWS_QUERYSTRING_AUTH = aws_qs_auth
+aws_s3_encrypt = env.bool('AWS_S3_ENCRYPTION', default=None)
+if aws_s3_encrypt is not None:
+    AWS_S3_ENCRYPTION = aws_s3_encrypt
+aws_file_overwrite = env.bool('AWS_S3_FILE_OVERWRITE', default=None)
+if aws_file_overwrite is not None:
+    AWS_S3_FILE_OVERWRITE = aws_file_overwrite
+aws_location = env.str('AWS_LOCATION', default=None)
+if aws_location is not None:
+    AWS_LOCATION = aws_location
 
 
 ####################

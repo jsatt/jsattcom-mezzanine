@@ -1,4 +1,5 @@
 Mezzanine~=4.3
+boto3
 django-ckeditor==5.6.1
 django-environ==0.4.5
 django-storages==1.7.1

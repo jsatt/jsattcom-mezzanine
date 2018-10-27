@@ -369,6 +369,9 @@ if aws_qs_auth is not None:
 aws_s3_encrypt = env.bool('AWS_S3_ENCRYPTION', default=None)
 if aws_s3_encrypt is not None:
     AWS_S3_ENCRYPTION = aws_s3_encrypt
+aws_acl = env.bool('AWS_DEFAULT_ACL', default=None)
+if aws_acl is not None:
+    AWS_DEFAULT_ACL = aws_acl
 aws_file_overwrite = env.bool('AWS_S3_FILE_OVERWRITE', default=None)
 if aws_file_overwrite is not None:
     AWS_S3_FILE_OVERWRITE = aws_file_overwrite

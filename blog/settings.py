@@ -378,7 +378,7 @@ if aws_file_overwrite is not None:
 aws_location = env.str('AWS_LOCATION', default=None)
 if aws_location is not None:
     AWS_LOCATION = aws_location
-aws_s3_domain = env.str('AWS_S6_CUSTOM_DOMAIN', default=None)
+aws_s3_domain = env.str('AWS_S3_CUSTOM_DOMAIN', default=None)
 if aws_s3_domain is not None:
     AWS_S3_CUSTOM_DOMAIN = aws_s3_domain
 
